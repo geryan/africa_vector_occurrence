@@ -1,0 +1,266 @@
+% format for Malaria journal using springer nature template
+
+%Version 2.1 April 2023
+% See section 11 of the User Manual for version history
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%\documentclass[referee,sn-basic]{sn-jnl}% referee option is meant for double line spacing
+
+%%=======================================================%%
+%% to print line numbers in the margin use lineno option %%
+%%=======================================================%%
+
+%%\documentclass[lineno,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%======================================================%%
+%% to compile with pdflatex/xelatex use pdflatex option %%
+%%======================================================%%
+
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+
+%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%%The option is available for: sn-basic.bst, sn-vancouver.bst, sn-chicago.bst, sn-mathphys.bst. %  
+ 
+\documentclass[sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
+%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+%%\documentclass[sn-mathphys,Numbered]{sn-jnl}% Math and Physical Sciences Reference Style
+%%\documentclass[sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
+%%\documentclass[sn-vancouver,Numbered]{sn-jnl}% Vancouver Reference Style
+%%\documentclass[sn-apa]{sn-jnl}% APA Reference Style 
+%%\documentclass[sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
+%%\documentclass[default]{sn-jnl}% Default
+%%\documentclass[default,iicol]{sn-jnl}% Default with double column layout
+
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+%%%%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
+
+\begin{document}
+
+\title[Article title]{Spatial bias in collection of vector occurrence data can influence how we understand vector distribution}
+
+\author[1,2]{\fnm{Gia} \sur{Musselwhite}}\email{gmusselwhite@princeton.edu}
+
+\author[1,3]{\fnm{Nicholas} \sur{Golding}}\email{nickgoldingresearch@gmail.com}
+
+\author*[1,4]{\fnm{Gerard} \sur{Ryan}}\email{gerard.ryan@telethonkids.org.au}
+
+% others: Marianne, Dapo and team, Grace
+
+
+\affil*[1]{\orgname{Telethon Kids Institute}, \orgaddress{\street{15 Hospital Avenue}, \city{Nedlands}, \postcode{6009}, \state{Western Australia}, \country{Australia}}}
+
+\affil[2]{\orgname{Princeton University}, \orgaddress{ \city{Princeton}, \postcode{08544}, \state{New Jersey}, \country{USA}}}
+
+\affil[3]{\orgdiv{Curtin School of Population Health}, \orgname{Curtin University}, \orgaddress{\city{Bentley}, \postcode{6102}, \state{Western Australia}, \country{Australia}}}
+
+\affil[4]{\orgdiv{Melbourne School of Population and Global Health}, \orgname{University of Melbourne}, \orgaddress{\postcode{3010}, \state{Victoria}, \country{Australia}}}
+
+
+
+
+
+
+\abstract{\textbf{Background:} 
+
+\textbf{Methods:} 
+\textbf{Results:} 
+\textbf{Conclusion:} 
+
+\keywords{malaria, vector borne disease, species distribution model, }
+
+%%\pacs[JEL Classification]{D8, H51}
+
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
+
+\maketitle
+
+\section{Background}\label{background}
+Dominant vector species are those that are locally most abundant or likely to feed on humans (Hay et al. 2010). The African continent is home to Anopheles gambiae, an dominant vector of the Plasmodium falciparum malaria, along with other species like Anopheles coluzzii and Anopheses funestus (Sinka et al. 2010).
+
+In recent years, researchers have made efforts to create publicly-accessible databases and distribution predictions of known dominant vector locations to better inform public health policy in Africa, e.g. the Malaria Atlas Project. However, existing vector modelling and prediction methods face limitations to their accuracy, one of the most pressing being sample selection bias in the locations in which samples are collected. 
+
+Spatial sampling of species' occurrence data is often biased towards locations that are easy to access (Phillips et al. 2009). These high-access regions are generally cities with a high population density relative to the rest of the country and are the most likely to house research institutions conducting or assisting with record collecting fieldwork. This survey bias effect is minimized when both the presence and absence of the target species is reported in any given region. However, a lack of resources often limits the ability of researchers to collect large data sets of presences and absences (Phillips et al. 2009). As such, models are often formulated using presence-only data alone, potentially creating bias (Phillips et al. 2009). 
+
+Attempting to correct for the inability to look at presence data against absence data, logistic regression or other methods can be used to model presence-only vectors against environmental background data created from a sample of regional points (Phillips et al. 2009). Target group background data, which uses environmental predictors from collections of multiple species in a biological group as a way to mimic the sampling bias of presence data, is preferred. 
+
+In this article, we aim to explore the sources and effects of bias in malaria vectors in Africa…… In a case study, we use generalized additive models (GAMs) to predict species distribution in the Lake Victoria region of Africa (i.e., in Kenya, Tanzania, and Uganda).
+
+Sinka and colleagues (2010) identified bias in vector collection sites as a limitation of their vector occurrence distributions, which used a MAP database of vector points. Building on this gap in the literature, this article sets out to map vector distribution and affiliated research institutions in Africa. Moreover, we outline the source of that bias and illustrate it through a statistical bias estimate and series of illustrative occurrence rate distribution and bias maps. We have a focus on the three countries sharing the border of Lake Victoria—Kenya, Tanzania, and Uganda. 
+
+\section{Methods}\label{methods}
+Vector occurrence data for 46 African countries was sourced from Sinka and colleagues (2009) from 1974-2011. It is a comprehensive database of dominant vector occurrences in Africa and therefore useful for an analysis of bias. The existing vector extraction data recorded longitude and latitude coordinates, source citations, sample period start and end dates, collection methods and count, anopheline species and age, and control methods, among others. 
+
+The vector extraction data compiled by Sinka et al. includes 38,353 point entries filtered for the African continent and associated islands. Of these entries, 11,481 lie within Kenya, Tanzania, or Uganda (29.94% of the total in Africa). This data for the African region uses points recorded from 733 unique source citations in the literature, most of them listing one or more research institutions within Africa as affiliations. Among Kenya, Tanzania, and Uganda, the vector points are sourced from 258 unique publications.
+
+Using each source literature citation from the MAP vector extraction data for our focus region, we subsequently recorded the affiliations of the institution(s) located within the source publication’s country or region of interest. If the affiliations were untraceable/unclear or there were no affiliations listed within the article’s region of interest, that citation was removed from the data. This process eliminated 47 articles from the subset of data for the Lake Victoria region, leaving 211 unique publications. 
+
+We plotted the untreated points on one map for the entire African continent and one keyed on Kenya, Tanzania, and Uganda. We created these maps to gain a base understanding of the distribution of vector points recorded in the MAP literature review before factoring in density or other measures. For the map fixating on the Lake Victoria region, however, we also set out to visualize the location of affiliated institutions by frequency of citation use, indicated by point size.
+
+We then simulate bias in the vector occurrence data by looking at the number of occurrence points against an accessibility travel time metric, through both a heatmap and a GAM. While publicly-accessible functions measuring travel time to nearby cities and ports at 30 arc seconds exists within the “geodata” R package, we thought this method was too general to undergo a detailed analysis of bias between vector points and specific source institutions of interest, which are often congregated in specific regions and are not evenly distributed across large cities. 
+
+Rather, we obtained our own travel time estimate to different institutions using MAP’s Global Accessibility Mapping interactive tool, which uses the methods of published global accessibility maps on user-inputted points of interest. The Accessibility Map tool is associated with Weiss and colleagues (2018) and uses a combination of data from OpenStreetMap and Google. We inputted the collection of source institution geographic points into the Accessibility Map tool and used the rasters (grids) it generated in place of traditional travel time data to conduct our analysis of bias within the SDM for Kenya, Tanzania, and Uganda.
+
+To begin, we used the “geodata” package to create a mask of bioclimate covariates from the WorldClim global weather and climate database for a merged unit of our three countries of interest. These covariates included temperature seasonality, maximum temperature of the warmest month in the year, and the annual temperature range. Following this, we rescaled our custom travel time data to a scale from 0 (least accessible) to 1 (most accessible), and then squared that data to create our bias raster layer. We then used those covariates to create a relative abundance map for the region showing the distribution range of the vector. This layer was also scaled from 0 to 1. 
+
+To simulate biased occurrence data, we simulated the distribution of occurrence points by
+simulating locations biased by the product of the probability of occurrence detection in each raster cell and the travel bias layer. The probability of detection was calculated using a formula that assumes the occurrence comes from a catch and that the number of mosquitoes caught is a Poisson sample, given the average number. It is the probability of observing one or more mosquitoes in the catch. For the purposes of our model, we set the maximum average catch size to be 100. 
+
+Finally, we used the GAM function from the “gam” package (Hastie) to regress the density of occurrence points within Kenya, Tanzania, and Uganda against our custom accessibility travel time values. We did this by counting the vector occurrence points inside each pixel in our relative abundance raster for the region, using the accessibility data as our predictor variable and the occurrence count as our response variable. 
+
+More explicit detail about step-by-step
+Introduce Maxent
+
+
+\section{Results}\label{results}
+We found 39 unique regional affiliations from the MAP database within Kenya, Tanzania, and Uganda. We then sourced longitude and latitude coordinates for these affiliated institutions using Google Maps, inputting them into an Excel file that was converted into a comma-separated values (CSV) file and read into RStudio. The breakdown of the frequency of author affiliated citations within the countries bordering Lake Victoria can be viewed in Figure 1 below. As seen, the most common affiliations were the Kenya Medical Research Institute (KEMRI) sites in Nairobi, Kisumu, and Kilifi and the International Centre of Insect Physiology and Ecology (ICIPE) in Nairobi. 
+
+
+Figure 1: Barplot of vector source affiliations within Kenya, Tanzania, and Uganda by frequency. 
+
+Figure 2 plots the vector occurrence points across the African continent. Meanwhile, Figure 3 focuses on Kenya, Tanzania, and Uganda. Additionally, it shows the frequency of citation use, indicated by circle size. As seen, there is a visible relationship between reported vector points in the region and distance to the regional affiliations.  
+
+
+
+Figure 2: Vector occurrence points across Africa. Our area of interest (Kenya, Tanzania, and Uganda) is highlighted on the map in yellow. The largest cities in the region are marked with white triangles. 
+
+
+
+Figure 3: vector occurrence points across Kenya, Tanzania, and Uganda. Source institution locations are marked in red with point size indicating frequency of affiliation listing in MAP database. The largest cities in the region (Kampala, Nairobi, and Dar es Salaam) are marked with white triangles. 
+
+The maps shown in Figure 4 and Figure 5 provide an alternative view of the recorded vector occurrence points in the database according to density. We visualized the density of vector sites over the entire continent and our focus region with more precision to avoid overlapping. We used two hexagonal bin heatmaps, a type of 2D density plot available in the ggplot2 package, to map vector points by density over Africa (Figure 1) and Kenya, Tanzania, and Uganda (Figure 2). There is a starkly wide vector density range where points are recorded at all. The rest of the map—filled grey—are pseudo-absences, areas of the map where no data was recorded.  
+
+
+Figure 4: Hexbin map of the density of vector occurrence points across Africa.
+
+
+ 
+
+Figure 5: Hexbin map of the density of vector occurrence points in Kenya, Tanzania, and Uganda.
+
+The four-panel figure below is the scale relative abundance, probability of detection, simulated occurrence rate distribution, and bias layer for Kenya, Tanzania, and Uganda plotted using heatmaps. Plot A is a visualized model based on relative true abundance. Plot B is a model of the probability of detecting one or more mosquito vectors in each raster cell, based only on available presence-absences in the records. Plot C is a visualization of the accessibility travel time measure we retrieved from MAP’s Global Accessibility Mapping tool, which is our bias layer. Plot D is the product of our bias and probability of detection (B and C, respectively)—the model is equivalent to apparent occurrence rate because we do not correct for bias. 
+
+-Walk through explanation of results more clearly
+
+Figure 6: Four-panel figure of scaled relative abundance (A), probability of detection (B), bias layer (C), and apparent occurrence rate (D) for Kenya, Tanzania, and Uganda. These figures use WorldClim climate data and MAP accessibility travel estimates to affiliated research institutions in the region. 
+
+The GAM regression depicts a negative relationship between the number of occurrence points, our response variable, and accessibility travel time to the affiliated institutions, our predictor, in the region of interest. In other words, as the time it takes to reach an affiliated institution increases, the number of recorded vectors goes significantly down. This result is consistent with Figure 3’s distribution of vector points near frequently-cited source affiliations and our understanding of sample bias in species distribution modelling. 
+
+
+Figure 7: Generalized additive model (GAM) of occurrence points as a function of accessibility travel time (time) in Kenya, Tanzania, and Uganda.
+
+Put gam summary info into the appendix
+Plot w/ confidence intervals - need to take model and make a prediction with the confidence intervals
+Vector of time = 1-1500 and give estimates based on that using predict function
+
+4 figs: probability of detection (B), glm w/ presence-absences, maxent w/ no correction, maxent w/ bias correction 
+Glm w/ presence-absences also fix the problem
+Just b/c you’re using Maxent, doesn’t automatically fix the problem
+But if you incorporate accounting for bias into maxent, fixes the problem
+
+Taking the results from what we did above, we did this thing
+Just want a description of what each of these things is
+
+Description of fig 8
+
+Plot B in Figure 8 below is a generalized linear model (GLM) vector distribution prediction using random presence-absence data. Plot C is a maximum entropy (MaxEnt) model using presence-only data and random background data. Plot D is a similar to C, except it incorporates bias correction extracted from presence and background locations. Figure 8 demonstrates two important findings. First, we see that the glm regression of geoclimate covariates as a predictor variable against the probability of presence as a response variable, when modeled using available presence-absence data, is a good measure of correcting for bias in the data and predicting more accurate models. Second, we see that Mexent models 
+
+
+
+Figure 8: Four-panel figure of probability of detection (A), GLM with presence-absences (B), Maxent with no correction (C), and Maxent with bias correction (D) for Kenya, Tanzania, and Uganda. These figures use WorldClim climate data and MAP accessibility travel estimates to affiliated research institutions in the region. 
+
+
+\section{Discussion}\label{discussion}
+More discussion into implication of results ^^^ add in writing about new figure
+
+The MAP vector database is the most comprehensive one available, but demonstrates how few vector points have been recorded in context of the whole continent ( Figures 1 and 2). Though vector prediction methods such as the ones used by Sinka and colleagues (2010) are useful tools for beginning to close that gap, there is significant room for error when models fail to account for sample bias.
+
+There are limitations to the methods we used to index and collect the source institution affiliations that were used in our travel bias map. Given that the MAP data samples are from 1970 onward, some affiliations listed in the publications no longer exist or have merged with other institutions. Some source citations are grey literature or do not list accessible affiliations. Additionally, some publications cited by MAP do not credit local contributors or list research institutions in the field of interest as affiliations, despite the likelihood that they did receive local support. 
+
+Despite this, our travel bias maps targeted towards institutions involved in the collection of vector locations stand as a strong evidence-based look into the effect of sample selection bias in vector distribution research which, according to Phillips et al. (2009), remains largely unexplored. The negative relationship between density of occurrence points as a function of our travel time metric suggests that selection bias does, in fact, impact the location and quantity of vector occurrence points recorded in the literature. 
+
+Our results support Phillips et al.’s findings that target-group background is preferred to limit sampling bias as compared to pseudo-absences. This once again affirms the importance of presence-absence data for interpreting bias in vector distribution mapping. If just presence-only data is available, methods that simulate presence-absence data should be used to account for this existing bias. We found that the best method of correcting for spatial sampling bias when presence-absence data points are available is using GLMs. For presence-only data, MaxEnt models that factor in accessibility bias scaling are more accurate and simulate the distribution of presence-absence data. 
+
+The research institutions associated with the sources of vector data also display trends that point towards potential causes of bias. For one, nearly all of the research institutions are in larger cities within Kenya, Tanzania, and Uganda or in port towns on Lake Victoria. For example, 10 of the 39 affiliations in our focus region are research/government institutions or universities located in Nairobi, which is the largest city in Kenya and the thirteenth-largest city in all of Africa. Moreover, 7 institutions are in Dar es Salaam, the largest city in Tanzania and the fourteenth-largest city in Africa. 
+
+This indicates a potential skew towards highly-populated regions with more resources and higher capital. Larger cities and port towns may also be more likely to have global connections and be able to communicate and conduct scientific research in Western-oriented languages like English and French. However, further research is needed to make substantive claims about covariate patterns that explain SDM bias. 
+
+Future studies would also benefit from expansions to the MAP database, especially for literature published in the years following 2011. Not only will this increase the number of total available vector points for distribution mapping and predictions, but more recent data may also reflect the gradual but steady increase of true presence-absence reporting in the past few years. As it stands, our regional analysis of Kenya, Tanzania, and Uganda are vital for driving better interpretations of sample bias and ensuring that policy-makers are equipped with the most accurate vector distribution maps possible.
+
+
+
+\section{Conclusion}\label{conclusion}
+
+\section{Availability of data and materials}\label{availability of data and materials}
+
+\backmatter
+
+\bmhead{Supplementary information}
+
+
+
+\bmhead{Acknowledgments}
+
+
+\section*{Declarations}
+
+Some journals require declarations to be submitted in a standardised format. Please check the Instructions for Authors of the journal to which you are submitting to see if you need to complete this section. If yes, your manuscript must contain the following sections under the heading `Declarations':
+
+\begin{itemize}
+\item Funding
+\item Conflict of interest/Competing interests (check journal-specific guidelines for which heading to use)
+\item Ethics approval 
+\item Consent to participate
+\item Consent for publication
+\item Availability of data and materials
+\item Code availability 
+\item Authors' contributions
+\end{itemize}
+
+\noindent
+If any of the sections are not relevant to your manuscript, please include the heading and write `Not applicable' for that section. 
+
+
+
+
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+\bibliography{sn-bibliography}% common bib file
+%% if required, the content of .bbl file can be included here once bbl is generated
+%%\input sn-article.bbl
+
+
+\end{document}
